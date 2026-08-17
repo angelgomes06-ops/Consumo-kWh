@@ -90,3 +90,36 @@ new Chart(comparacao, {
         }
     }
 });
+const conta = document.getElementById('contaChart');
+
+new Chart(conta, {
+    type: 'bar',
+
+    data: {
+        labels: ['Antes da scooter', 'Depois da scooter'],
+
+        datasets: [{
+            label: 'Valor médio da conta (R$)',
+
+            data: [106.20, 94.83],
+
+            borderWidth: 1
+        }]
+    },
+
+    options: {
+        responsive: true,
+
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
