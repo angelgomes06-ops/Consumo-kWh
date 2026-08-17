@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Impacto da Scooter no Consumo de Energia</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <p class="tag">PROJETO DE ANÁLISE DE DADOS</p>
+
+            <h1>⚡ Impacto da Scooter Elétrica no Consumo de Energia</h1>
+
+            <p class="subtitle">
+                Análise do consumo residencial antes e depois da utilização
+                de uma scooter elétrica.
+            </p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- INDICADORES -->
+
+        <section class="cards">
+
+            <div class="card">
+                <span>Consumo médio antes</span>
+                <strong>101,2 kWh</strong>
+            </div>
+
+            <div class="card">
+                <span>Consumo médio depois</span>
+                <strong>93,2 kWh</strong>
+            </div>
+
+            <div class="card">
+                <span>Redução do consumo</span>
+                <strong>7,91%</strong>
+            </div>
+
+            <div class="card">
+                <span>Redução média da conta</span>
+                <strong>10,71%</strong>
+            </div>
+
+        </section>
+
+
+        <!-- GRÁFICO -->
+
+        <section class="dashboard-section">
+
+            <h2>📈 Evolução do consumo</h2>
+
+            <p>
+                Consumo mensal de energia durante o período analisado.
+                A scooter começou a ser utilizada em abril.
+            </p>
+
+            <div class="chart-container">
+                <canvas id="consumoChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- COMPARAÇÃO -->
+
+        <section class="comparison">
+
+            <div class="comparison-card">
+
+                <h2>🔌 Antes da scooter</h2>
+
+                <div class="number">
+                    101,2 kWh
+                </div>
+
+                <p>
+                    Consumo médio mensal
+                </p>
+
+                <div class="number">
+                    R$ 106,20
+                </div>
+
+                <p>
+                    Valor médio da conta
+                </p>
+
+            </div>
+
+
+            <div class="comparison-card">
+
+                <h2>🛵 Depois da scooter</h2>
+
+                <div class="number">
+                    93,2 kWh
+                </div>
+
+                <p>
+                    Consumo médio mensal
+                </p>
+
+                <div class="number">
+                    R$ 94,83
+                </div>
+
+                <p>
+                    Valor médio da conta
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCOOTER -->
+
+        <section class="scooter">
+
+            <h2>🛵 Consumo estimado da scooter</h2>
+
+            <div class="scooter-info">
+
+                <div>
+                    <span>Potência</span>
+                    <strong>1.000 W</strong>
+                </div>
+
+                <div>
+                    <span>Carregamento</span>
+                    <strong>8 h/semana</strong>
+                </div>
+
+                <div>
+                    <span>Estimativa mensal</span>
+                    <strong>34,64 kWh</strong>
+                </div>
+
+            </div>
+
+            <p class="note">
+                Estimativa teórica considerando 1.000 W de potência,
+                8 horas de carregamento semanal e 4,33 semanas por mês.
+            </p>
+
+        </section>
+
+
+        <!-- INSIGHTS -->
+
+        <section class="insights">
+
+            <h2>🔎 Principais insights</h2>
+
+            <div class="insight">
+                <strong>01</strong>
+                <p>
+                    O consumo médio caiu de 101,2 kWh para 93,2 kWh
+                    após o início da utilização da scooter.
+                </p>
+            </div>
+
+            <div class="insight">
+                <strong>02</strong>
+                <p>
+                    A redução média observada foi de 8 kWh por mês,
+                    equivalente a 7,91%.
+                </p>
+            </div>
+
+            <div class="insight">
+                <strong>03</strong>
+                <p>
+                    O menor consumo do período ocorreu em julho,
+                    com 89 kWh.
+                </p>
+            </div>
+
+            <div class="insight">
+                <strong>04</strong>
+                <p>
+                    Apesar da utilização da scooter, houve redução
+                    tanto no consumo de energia quanto no valor médio
+                    das contas.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- CONCLUSÃO -->
+
+        <section class="conclusion">
+
+            <h2>💡 Conclusão</h2>
+
+            <p>
+                Os dados analisados mostram uma redução no consumo médio
+                de energia após o início da utilização da scooter elétrica.
+                Entretanto, essa análise não permite afirmar que a scooter
+                foi responsável pela redução, pois outros fatores podem
+                ter influenciado o consumo residencial.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Projeto desenvolvido para portfólio de Análise de Dados
+        </p>
+
+        <p>
+            Python • Pandas • HTML • CSS • JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
