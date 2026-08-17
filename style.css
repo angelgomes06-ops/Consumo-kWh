@@ -1,21 +1,52 @@
-/* =========================
+/* ========================================
+   IDENTIDADE VISUAL
+======================================== */
+
+:root {
+
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+
+    --success: #16A34A;
+    --success-light: #DCFCE7;
+
+    --dark: #0F172A;
+    --text: #1E293B;
+    --text-light: #64748B;
+
+    --background: #F5F7FA;
+    --card: #FFFFFF;
+
+    --border: #E2E8F0;
+
+}
+
+
+/* ========================================
    CONFIGURAÇÕES GERAIS
-========================= */
+======================================== */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
 body {
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    background: #f4f6f8;
+    background: var(--background);
 
-    color: #1f2937;
+    color: var(--text);
 
     line-height: 1.6;
 
@@ -34,35 +65,46 @@ body {
 
 
 
-/* =========================
+/* ========================================
    CABEÇALHO
-========================= */
+======================================== */
 
 header {
 
-    background: #111827;
+    background:
+        linear-gradient(
+            135deg,
+            #0F172A,
+            #1E3A8A
+        );
 
     color: white;
 
-    padding: 60px 0;
+    padding: 70px 0;
 
 }
 
 
 .tag {
 
+    color: #93C5FD;
+
     font-size: 13px;
+
+    font-weight: bold;
 
     letter-spacing: 2px;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 
 }
 
 
 h1 {
 
-    font-size: 42px;
+    font-size: 44px;
+
+    line-height: 1.15;
 
     max-width: 850px;
 
@@ -71,27 +113,28 @@ h1 {
 
 .subtitle {
 
-    margin-top: 20px;
+    margin-top: 22px;
 
     font-size: 18px;
 
-    max-width: 750px;
+    max-width: 720px;
 
-    color: #d1d5db;
+    color: #CBD5E1;
 
 }
 
 
 
-/* =========================
-   CARDS
-========================= */
+/* ========================================
+   CARDS PRINCIPAIS
+======================================== */
 
 .cards {
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
     gap: 20px;
 
@@ -102,13 +145,32 @@ h1 {
 
 .card {
 
-    background: white;
+    background: var(--card);
 
-    padding: 25px;
+    padding: 28px;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 12px
+        rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, 0.08);
 
 }
 
@@ -117,24 +179,43 @@ h1 {
 
     display: block;
 
-    color: #6b7280;
+    color: var(--text-light);
 
-    margin-bottom: 12px;
+    font-size: 14px;
+
+    margin-bottom: 10px;
 
 }
 
 
 .card strong {
 
-    font-size: 28px;
+    display: block;
+
+    font-size: 30px;
+
+    color: var(--text);
 
 }
 
 
 
-/* =========================
+/* ========================================
+   DESTAQUE DOS INDICADORES
+======================================== */
+
+.card:nth-child(3) strong,
+.card:nth-child(4) strong {
+
+    color: var(--success);
+
+}
+
+
+
+/* ========================================
    SEÇÕES
-========================= */
+======================================== */
 
 .dashboard-section,
 .scooter,
@@ -142,13 +223,19 @@ h1 {
 .methodology,
 .conclusion {
 
-    background: white;
+    background: var(--card);
 
     padding: 35px;
 
     margin-bottom: 30px;
 
-    border-radius: 15px;
+    border-radius: 16px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 12px
+        rgba(15, 23, 42, 0.04);
 
 }
 
@@ -159,15 +246,24 @@ h1 {
 .methodology h2,
 .conclusion h2 {
 
-    margin-bottom: 15px;
+    color: var(--dark);
+
+    margin-bottom: 10px;
+
+}
+
+
+.dashboard-section > p {
+
+    color: var(--text-light);
 
 }
 
 
 
-/* =========================
+/* ========================================
    GRÁFICOS
-========================= */
+======================================== */
 
 .chart-container {
 
@@ -181,19 +277,24 @@ h1 {
 
 
 
-/* =========================
+/* ========================================
    AVISO DA SCOOTER
-========================= */
+======================================== */
 
 .periodo-scooter {
 
-    margin: 20px 0;
+    margin: 22px 0;
 
-    padding: 12px 16px;
+    padding: 14px 18px;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
-    background: #f3f4f6;
+    background: #EFF6FF;
+
+    border-left:
+        4px solid var(--primary);
+
+    color: #1E40AF;
 
     font-size: 15px;
 
@@ -201,17 +302,18 @@ h1 {
 
 
 
-/* =========================
+/* ========================================
    COMPARAÇÃO
-========================= */
+======================================== */
 
 .comparison {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
-    gap: 25px;
+    gap: 24px;
 
     margin-bottom: 30px;
 
@@ -220,13 +322,24 @@ h1 {
 
 .comparison-card {
 
-    background: white;
+    background: var(--card);
 
     padding: 35px;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 12px
+        rgba(15, 23, 42, 0.05);
+
+}
+
+
+.comparison-card h2 {
+
+    color: var(--dark);
 
 }
 
@@ -239,19 +352,29 @@ h1 {
 
     margin-top: 20px;
 
+    color: var(--primary);
+
+}
+
+
+.comparison-card p {
+
+    color: var(--text-light);
+
 }
 
 
 
-/* =========================
+/* ========================================
    SCOOTER
-========================= */
+======================================== */
 
 .scooter-info {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 20px;
 
@@ -262,11 +385,13 @@ h1 {
 
 .scooter-info div {
 
-    background: #f3f4f6;
+    background: #F8FAFC;
 
-    padding: 20px;
+    padding: 22px;
 
-    border-radius: 10px;
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
 
 }
 
@@ -275,9 +400,11 @@ h1 {
 
     display: block;
 
-    color: #6b7280;
+    color: var(--text-light);
 
-    margin-bottom: 10px;
+    font-size: 14px;
+
+    margin-bottom: 8px;
 
 }
 
@@ -286,6 +413,8 @@ h1 {
 
     font-size: 22px;
 
+    color: var(--dark);
+
 }
 
 
@@ -293,7 +422,7 @@ h1 {
 
     margin-top: 20px;
 
-    color: #6b7280;
+    color: var(--text-light);
 
     font-size: 14px;
 
@@ -301,9 +430,9 @@ h1 {
 
 
 
-/* =========================
+/* ========================================
    INSIGHTS
-========================= */
+======================================== */
 
 .insight {
 
@@ -313,28 +442,60 @@ h1 {
 
     padding: 20px 0;
 
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom:
+        1px solid var(--border);
 
 }
 
 
-.insight strong:first-child {
+.insight:last-child {
 
-    font-size: 24px;
+    border-bottom: none;
+
+}
+
+
+.insight > strong {
+
+    min-width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #EFF6FF;
+
+    color: var(--primary);
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+}
+
+
+.insight p {
+
+    color: var(--text);
 
 }
 
 
 
-/* =========================
+/* ========================================
    METODOLOGIA
-========================= */
+======================================== */
 
 .methodology-steps {
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
     gap: 20px;
 
@@ -345,11 +506,14 @@ h1 {
 
 .methodology-steps div {
 
-    background: #f3f4f6;
+    background: #F8FAFC;
 
-    padding: 20px;
+    padding: 22px;
 
-    border-radius: 10px;
+    border-radius: 12px;
+
+    border:
+        1px solid var(--border);
 
 }
 
@@ -358,6 +522,8 @@ h1 {
 
     display: block;
 
+    color: var(--primary);
+
     margin-bottom: 10px;
 
 }
@@ -365,64 +531,87 @@ h1 {
 
 .methodology-steps p {
 
-    color: #6b7280;
+    color: var(--text-light);
+
+    font-size: 14px;
 
 }
 
 
 
-/* =========================
+/* ========================================
    CONCLUSÃO
-========================= */
+======================================== */
+
+.conclusion {
+
+    border-left:
+        5px solid var(--success);
+
+}
+
 
 .conclusion p {
 
     margin-bottom: 15px;
 
+    color: var(--text);
+
 }
 
 
 
-/* =========================
+/* ========================================
    RODAPÉ
-========================= */
+======================================== */
 
 footer {
+
+    background: var(--dark);
+
+    color: #94A3B8;
 
     text-align: center;
 
     padding: 40px;
 
-    color: #6b7280;
+}
+
+
+footer p {
+
+    margin-bottom: 8px;
 
 }
 
 
 
-/* =========================
+/* ========================================
    RESPONSIVIDADE
-========================= */
+======================================== */
 
 @media (max-width: 900px) {
 
-
     .cards {
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
 
     }
 
 
     .methodology-steps {
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
 
     }
 
 
     .scooter-info {
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
 
     }
 
@@ -431,7 +620,6 @@ footer {
 
 
 @media (max-width: 600px) {
-
 
     .container {
 
@@ -442,14 +630,14 @@ footer {
 
     header {
 
-        padding: 40px 0;
+        padding: 45px 0;
 
     }
 
 
     h1 {
 
-        font-size: 28px;
+        font-size: 30px;
 
     }
 
@@ -463,28 +651,32 @@ footer {
 
     .cards {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .comparison {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .scooter-info {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .methodology-steps {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
