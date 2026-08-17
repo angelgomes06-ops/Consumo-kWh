@@ -1,8 +1,18 @@
-/* =========================
-   GRÁFICO DE CONSUMO MENSAL
-========================= */
+/* ========================================
+   CONFIGURAÇÕES DOS GRÁFICOS
+======================================== */
 
-const ctx = document.getElementById('consumoChart');
+const azul = '#2563EB';
+const verde = '#16A34A';
+
+
+
+/* ========================================
+   GRÁFICO DE CONSUMO MENSAL
+======================================== */
+
+const ctx =
+    document.getElementById('consumoChart');
 
 
 new Chart(ctx, {
@@ -49,13 +59,20 @@ new Chart(ctx, {
             ],
 
 
+            borderColor: azul,
+
+            backgroundColor:
+                'rgba(37, 99, 235, 0.10)',
+
             borderWidth: 3,
 
-            tension: 0.3,
+            tension: 0.35,
 
-            fill: false,
+            fill: true,
 
-            pointRadius: 5
+            pointRadius: 5,
+
+            pointHoverRadius: 8
 
         }]
 
@@ -66,12 +83,37 @@ new Chart(ctx, {
 
         responsive: true,
 
+        maintainAspectRatio: false,
+
 
         plugins: {
 
             legend: {
 
-                display: true
+                labels: {
+
+                    font: {
+
+                        size: 13
+
+                    }
+
+                }
+
+            },
+
+
+            tooltip: {
+
+                callbacks: {
+
+                    label: function(context) {
+
+                        return ` ${context.raw} kWh`;
+
+                    }
+
+                }
 
             }
 
@@ -82,7 +124,25 @@ new Chart(ctx, {
 
             y: {
 
-                beginAtZero: false
+                beginAtZero: false,
+
+                grid: {
+
+                    color:
+                        '#E2E8F0'
+
+                }
+
+            },
+
+
+            x: {
+
+                grid: {
+
+                    display: false
+
+                }
 
             }
 
@@ -94,11 +154,12 @@ new Chart(ctx, {
 
 
 
-/* =========================
-   COMPARAÇÃO DO CONSUMO
-========================= */
+/* ========================================
+   GRÁFICO ANTES X DEPOIS
+======================================== */
 
-const comparacao = document.getElementById('comparacaoChart');
+const comparacao =
+    document.getElementById('comparacaoChart');
 
 
 new Chart(comparacao, {
@@ -118,7 +179,8 @@ new Chart(comparacao, {
 
         datasets: [{
 
-            label: 'Consumo médio (kWh)',
+            label:
+                'Consumo médio (kWh)',
 
 
             data: [
@@ -129,7 +191,18 @@ new Chart(comparacao, {
             ],
 
 
-            borderWidth: 1
+            backgroundColor: [
+
+                '#94A3B8',
+                verde
+
+            ],
+
+
+            borderRadius: 8,
+
+
+            borderWidth: 0
 
         }]
 
@@ -140,12 +213,29 @@ new Chart(comparacao, {
 
         responsive: true,
 
+        maintainAspectRatio: false,
+
 
         plugins: {
 
             legend: {
 
                 display: false
+
+            },
+
+
+            tooltip: {
+
+                callbacks: {
+
+                    label: function(context) {
+
+                        return ` ${context.raw} kWh`;
+
+                    }
+
+                }
 
             }
 
@@ -158,11 +248,29 @@ new Chart(comparacao, {
 
                 beginAtZero: true,
 
+                grid: {
+
+                    color:
+                        '#E2E8F0'
+
+                },
+
                 title: {
 
                     display: true,
 
                     text: 'kWh'
+
+                }
+
+            },
+
+
+            x: {
+
+                grid: {
+
+                    display: false
 
                 }
 
@@ -176,11 +284,12 @@ new Chart(comparacao, {
 
 
 
-/* =========================
-   COMPARAÇÃO DO VALOR DA CONTA
-========================= */
+/* ========================================
+   GRÁFICO DO VALOR DA CONTA
+======================================== */
 
-const conta = document.getElementById('contaChart');
+const conta =
+    document.getElementById('contaChart');
 
 
 new Chart(conta, {
@@ -200,7 +309,8 @@ new Chart(conta, {
 
         datasets: [{
 
-            label: 'Valor médio da conta (R$)',
+            label:
+                'Valor médio da conta',
 
 
             data: [
@@ -211,7 +321,18 @@ new Chart(conta, {
             ],
 
 
-            borderWidth: 1
+            backgroundColor: [
+
+                '#94A3B8',
+                azul
+
+            ],
+
+
+            borderRadius: 8,
+
+
+            borderWidth: 0
 
         }]
 
@@ -222,12 +343,29 @@ new Chart(conta, {
 
         responsive: true,
 
+        maintainAspectRatio: false,
+
 
         plugins: {
 
             legend: {
 
                 display: false
+
+            },
+
+
+            tooltip: {
+
+                callbacks: {
+
+                    label: function(context) {
+
+                        return ` R$ ${context.raw.toFixed(2).replace('.', ',')}`;
+
+                    }
+
+                }
 
             }
 
@@ -240,11 +378,29 @@ new Chart(conta, {
 
                 beginAtZero: true,
 
+                grid: {
+
+                    color:
+                        '#E2E8F0'
+
+                },
+
                 title: {
 
                     display: true,
 
                     text: 'Valor (R$)'
+
+                }
+
+            },
+
+
+            x: {
+
+                grid: {
+
+                    display: false
 
                 }
 
