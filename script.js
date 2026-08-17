@@ -55,3 +55,38 @@ new Chart(ctx, {
         }
     }
 });
+
+
+const comparacao = document.getElementById('comparacaoChart');
+
+new Chart(comparacao, {
+    type: 'bar',
+
+    data: {
+        labels: ['Antes da scooter', 'Depois da scooter'],
+
+        datasets: [{
+            label: 'Consumo médio (kWh)',
+
+            data: [101.2, 93.2],
+
+            borderWidth: 1
+        }]
+    },
+
+    options: {
+        responsive: true,
+
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
